@@ -1,10 +1,4 @@
-const firtsName = prompt('Digite o seu primeiro nome: ');
-const lestName = prompt('Digite o seu sobre nome: ');
-let age = parseInt(prompt('Digite a sua idade: '));
-const age2 = 2
+const firstName = prompt('Digite o seu primeiro nome: ');
+const grettingMessagem = 'Hello ' + firstName;
 
-age = age + age2
-
-console.log(firtsName);
-console.log(lestName);
-console.log(age);
+document.getElementById("greenting").innerHTML = grettingMessagem;
