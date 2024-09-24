@@ -1,11 +1,11 @@
-const gretting = (name) => {
-    console.log('Hi ' + name )
-};
+const changeBackgroundColor = () => {
+    const colors = [
+        "red", "blue", "green", "yellow", "purple", "orange", "pink", "brown",
+        "black", "white", "gray", "cyan", "magenta", "lime", "teal", "indigo",
+        "violet", "gold", "silver", "beige", "maroon", "navy", "olive", "coral",
+        "turquoise", "lavender", "peach", "mint", "crimson", "ivory", "khaki"
+      ];
+    const randomColor = colors[Math.floor(Math.random() * colors.length)];
 
-gretting('Adson');
-
-const sum = (n1, n2) => {
-    return n1 + n2;
-};
-
-console.log(sum(20, 10));
+    document.body.style.backgroundColor = randomColor;
+}
