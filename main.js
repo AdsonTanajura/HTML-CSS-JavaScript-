@@ -1,11 +1,4 @@
-const gretting = (name) => {
-    console.log('Hi ' + name )
-};
-
-gretting('Adson');
-
-const sum = (n1, n2) => {
-    return n1 + n2;
-};
-
-console.log(sum(20, 10));
+function changeColor() {
+    const titleH1 = document.getElementById("changeh1");
+    titleH1.style.color = 'red';
+}
