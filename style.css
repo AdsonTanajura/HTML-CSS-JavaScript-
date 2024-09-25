@@ -1,17 +1,37 @@
 body {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
+}
+
+#sharing-buttons {
+  margin-top: 20px;
+}
+
+.sharing-button {
+  display: inline-block;
   justify-content: center;
-  height: 40vh;
-}
-
-input, button {
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-#result {
-  font-size: 20px;
+  align-items: center;
+  font-size: 18px;
   font-weight: bold;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.facebook {
+  background-color: #3b5998;
+}
+
+.twitter {
+  background-color: #1da1f2;
+}
+
+.sharing-button i {
+  margin-left: 10px;
+  font-size: 24px;
+}
+
+.sharing-button:hover {
+  opacity: 0.8;
 }
