@@ -1,83 +1,23 @@
-body {
-  display: flex;
-  justify-content: center;
-}
-
 .container {
-  height: 400px;
-  width: 400px;
-  background-color: red;
-  display: flex;
-  flex-direction: column;
+  text-align: center;
 }
 
 h1 {
-  text-align: center;
-  font-family: sans-serif;
-  font-weight: bold;
-
+  font-size: 3em;
+  margin-bottom: 0.5em;
 }
 
-p {
-  text-align: center;
-  color: greenyellow;
-  font-size: 40px;
-  margin: 0;
-  font-family: sans-serif;
-  font-weight: bold;
-
-
+#display {
+  font-size: 5em;
+  margin-bottom: 0.5em;
 }
 
-.control-painel {
-  display: flex;
-  flex-direction: initial;
-  gap: 8px;
-  justify-content: center;
-  margin-top: 10px;
+button {
+  font-size: 1.5em;
+  padding: 0.5em 1em;
+  margin: 0 0.5em;
 }
 
-.buttom-add {
-  background-color: green;
-  border: none;
-  border-radius: 10%;
-  height: 40px;
-  width: 40px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.buttom-remove {
-  background-color: green;
-  border: none;
-  border-radius: 10%;
-  height: 40px;
-  width: 40px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-
-}
-.buttom-reset {
-  background-color: green;
-  border: none;
-  border-radius: 10%;
-  height: 40px;
-  width: 80px;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  
-}
-
-.buttom-remove:hover {
-  background-color: greenyellow;
-}
-
-.buttom-add:hover {
-  background-color: greenyellow;
-}
-.buttom-reset:hover {
-  background-color: greenyellow;
+body {
+  background-color: aquamarine;
 }
