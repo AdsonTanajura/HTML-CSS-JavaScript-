@@ -9,12 +9,15 @@
 .square_1 {
   width: 200px;
   height: 200px;
-background-image: linear-gradient(to bottom left, black, yellow);
+  background-color: aqua;
+  border: 5px solid black;
+  border-bottom: 20px solid yellow;
 }
 
 .square_2 {
   width: 200px;
   height: 200px;
-  background-image: radial-gradient(red,blue);
-
+  background-color: aqua;
+  border: 5px solid black;
+  border-top: 20px solid yellow;
 }
