@@ -1,37 +1,31 @@
-
-var input_amount = document.getElementById("original-currency-amount");
-var from_currency = document.getElementById("from_currency");
-var to_currency = document.getElementById("to_currency");
-var exchange_rate = document.getElementById("exchange-rate");
-var exchange = document.getElementById("exchange");
-var output_amount = document.getElementById("output-text");
-var output_from = document.getElementById("from");
-var output_to = document.getElementById("to");
-
-
-exchange.addEventListener("click",()=>{
-    [from_currency.value, to_currency.value] = [to_currency.value, from_currency.value];
-    calculate();
-})
-
-var to_amount = 0;
 function calculate(){
-    const from_currency_value = from_currency.value;
-    const to_currency_value = to_currency.value;
+    var bmi;
+    var result = document.getElementById("result");
+
+    var weight = parseInt(document.getElementById("weight").value);
+    document.getElementById("weight-val").textContent = weight + " kg";
+
+    var height = parseInt(document.getElementById("height").value);
+    document.getElementById("height-val").textContent = height + " cm";
+
+    bmi = (weight / Math.pow( (height/100), 2 )).toFixed(1);
+    result.textContent = bmi;
     
-    fetch(`https://api.exchangerate-api.com/v4/latest/${from_currency_value}`)
-    .then(res => res.json())
-    .then(res => {
-        const rate = res.rates[to_currency_value];
-        exchange_rate.value = `${rate}`
-        to_amount = (input_amount.value * rate).toFixed(3);
-        output_from.innerText= `${input_amount.value} ${from_currency_value}`;
-        output_to.innerText = `${to_amount} ${to_currency_value}`;
-        output_amount.style.display="block";
-    })
+    if(bmi < 18.5){
+        category = "Underweight";
+        result.style.color = "#ffc44d";
+    }
+    else if( bmi >= 18.5 && bmi <= 24.9 ){
+        category = "Normal Weight";
+        result.style.color = "#0be881";
+    }
+    else if( bmi >= 25 && bmi <= 29.9 ){
+        category = "Overweight";
+        result.style.color = "#ff884d";
+    }
+    else{
+        category = "Obese";
+        result.style.color = "#ff5e57";
+    }
+    document.getElementById("category").textContent = category;
 }
-
-
-document.getElementById("exchange_button").addEventListener("click",()=>{
-    calculate();
-});
