@@ -1,33 +1,21 @@
-let userNum1 = document.getElementById('userNum1')
-let userNum2 = document.getElementById('userNum2')
-let operator = document.getElementById('operator')
-let calculateButton = document.getElementById('calculate')
-let resultDiv = document.getElementById('result')
+const startInput = document.getElementById('start');
+const endInput = document.getElementById('end');
+const outputDiv = document.getElementById('output');
 
-calculateButton.addEventListener('click', function() {
-  let num1 = Number(userNum1.value)
-  let num2 = Number(userNum2.value)
-  let op = operator.value
-  let result
+function showEvenNumbers() {
+  const start = Number(startInput.value);
+  const end = Number(endInput.value);
 
-  switch (op) {
-    case '+':
-      result = num1 + num2
-      break;
-    case '-':
-      result = num1 - num2
-      break;
-    case '*':
-      result = num1 * num2
-      break;
-    case '/':
-      result = num1 / num2
-      break;
+  let i = start;
+  let output = [];
 
-    default:
-      result = 'Invalid Operator';
-      break;
+  while (i <= end) {
+    i = i + 1;
+    if (i % 2 == 0) {
+      output.push(i);
+      outputDiv.innerHTML = output
+    }
   }
-  
-  resultDiv.innerHTML = 'Tbe result is ' + result;
-});
+  startInput.value = ' ';
+  endInput.value = ' ';
+}
