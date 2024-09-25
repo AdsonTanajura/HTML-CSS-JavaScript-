@@ -5,17 +5,22 @@ const images = [
     "images/4.jpg",
     "images/5.jpg",
     "images/6.jpg",
-    "images/7.jpg",
-]
-let currentIndex = 0;
+];
 
-const imageElement = document.getElementById('image');
-const buttonElement = document.getElementById('button');
+const container = document.getElementById('image-list');
 
-buttonElement.addEventListener('click', () => {
-    currentIndex = currentIndex + 1;
-    if (currentIndex >= images.length){
-        currentIndex = 0
-    }
-    imageElement.src = images[currentIndex];
-})
+        // Usando map para criar um array de divs e imgs
+        const imageElements = images.map(src => {
+            const div = document.createElement('div');
+            div.classList.add("image-container")
+            const img = document.createElement('img');
+            
+            img.src = src;
+            img.alt = 'Imagem';
+            
+            div.appendChild(img);
+            return div;  // Retorna o div criado
+        });
+
+        // Adiciona cada div ao container
+        imageElements.forEach(div => container.appendChild(div));
