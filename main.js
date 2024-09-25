@@ -1,43 +1,47 @@
-const display = document.getElementById('display');
+const countdown = document.getElementById('countdown');
 const startButton = document.getElementById('start');
 const stopButton = document.getElementById('stop');
 const resetButton = document.getElementById('reset');
 
-let intervalId;
-let elapsedTime = 0;
+let timer;
+let remainingTime = 0;
 
-function formatTime(time) {
-  let hours = Math.floor(time / 3600);
-  let minutes = Math.floor((time - hours * 3600) / 60);
-  let seconds = time % 60;
-  return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+function updateCountdown() {
+  let minutes = Math.floor(remainingTime / 60);
+  let seconds = remainingTime % 60;
+  countdown.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 }
 
-function updateTime() {
-  elapsedTime++;
-  display.textContent = formatTime(elapsedTime);
+function startCountdown() {
+  timer = setInterval(function() {
+    if (remainingTime > 0) {
+      remainingTime--;
+      updateCountdown();
+    } else {
+      stopCountdown();
+    }
+  }, 1000);
 }
 
-function start() {
-  intervalId = setInterval(updateTime, 1000);
-  startButton.disabled = true;
-  stopButton.disabled = false;
+function stopCountdown() {
+  clearInterval(timer);
 }
 
-function stop() {
-  clearInterval(intervalId);
-  startButton.disabled = false;
-  stopButton.disabled = true;
+function resetCountdown() {
+  stopCountdown();
+  remainingTime = 0;
+  updateCountdown();
 }
 
-function reset() {
-  clearInterval(intervalId);
-  elapsedTime = 0;
-  display.textContent = formatTime(elapsedTime);
-  startButton.disabled = false;
-  stopButton.disabled = true;
-}
+startButton.addEventListener('click', function() {
+  remainingTime = 5 * 60; // 5 minutes in seconds
+  startCountdown();
+});
 
-startButton.addEventListener('click', start);
-stopButton.addEventListener('click', stop);
-resetButton.addEventListener('click', reset);
+stopButton.addEventListener('click', function() {
+  stopCountdown();
+});
+
+resetButton.addEventListener('click', function() {
+  resetCountdown();
+});
