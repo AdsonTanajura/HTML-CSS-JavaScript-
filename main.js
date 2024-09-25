@@ -11,7 +11,7 @@ function showEvenNumbers() {
 
   while (i <= end) {
     i = i + 1;
-    if (i % 2 == 0) {
+    if (i % 2 !== 0) {
       output.push(i);
       outputDiv.innerHTML = output
     }
