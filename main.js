@@ -1,9 +1,33 @@
-const checkButton = document.getElementById('check-button');
-const ageInput = document.getElementById('age-input');
+let userNum1 = document.getElementById('userNum1')
+let userNum2 = document.getElementById('userNum2')
+let operator = document.getElementById('operator')
+let calculateButton = document.getElementById('calculate')
+let resultDiv = document.getElementById('result')
 
-checkButton.addEventListener('click', () => {
-   const age = ageInput.value;
-   console.log(age);
-   const message = (age >= 18) ? 'You are and adult' : 'You are not adult';
-   alert(message);
-})
+calculateButton.addEventListener('click', function() {
+  let num1 = Number(userNum1.value)
+  let num2 = Number(userNum2.value)
+  let op = operator.value
+  let result
+
+  switch (op) {
+    case '+':
+      result = num1 + num2
+      break;
+    case '-':
+      result = num1 - num2
+      break;
+    case '*':
+      result = num1 * num2
+      break;
+    case '/':
+      result = num1 / num2
+      break;
+
+    default:
+      result = 'Invalid Operator';
+      break;
+  }
+  
+  resultDiv.innerHTML = 'Tbe result is ' + result;
+});
