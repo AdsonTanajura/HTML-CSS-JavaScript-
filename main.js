@@ -1,15 +1,15 @@
-const search = document.querySelector('#search');
-const list = document.querySelector('#list');
+const calculateButton = document.getElementById("calculate");
+calculateButton.addEventListener("click", function() {
+  const carPrice = document.getElementById("price").value;
+  const downPayment = document.getElementById("downPayment").value;
+  const loanTerm = document.getElementById("loanTerm").value;
+  const interestRate = document.getElementById("interestRate").value;
 
-search.addEventListener('input', () => {
-  const value = search.value.toLowerCase();
-  const items = list.getElementsByTagName('li');
-  Array.from(items).forEach((item) => {
-    const text = item.textContent.toLowerCase();
-    if (text.indexOf(value) !== -1) {
-      item.style.display = 'block';
-    } else {
-      item.style.display = 'none';
-    }
-  });
+  const loanAmount = carPrice - downPayment;
+  const monthlyInterestRate = (interestRate / 100) / 12;
+  const numberOfPayments = loanTerm;
+  const monthlyPayment = (loanAmount * monthlyInterestRate) / (1 - Math.pow(1 + monthlyInterestRate, -numberOfPayments));
+  
+  const result = document.getElementById("result");
+  result.textContent = `Monthly payment: $${monthlyPayment.toFixed(2)}`;
 });
