@@ -1,21 +1,12 @@
-const startInput = document.getElementById('start');
-const endInput = document.getElementById('end');
-const outputDiv = document.getElementById('output');
+const num1Input = document.getElementById("num1");
+const num2Input = document.getElementById("num2");
+const outputDiv = document.getElementById("output");
 
-function showEvenNumbers() {
-  const start = Number(startInput.value);
-  const end = Number(endInput.value);
+function showHigherNumber() {
+  const num1 = Number(num1Input.value);
+  const num2 = Number(num2Input.value);
 
-  let i = start;
-  let output = [];
+  const higherNumber = (num1 > num2) ? num1 : num2;
 
-  while (i <= end) {
-    i = i + 1;
-    if (i % 2 !== 0) {
-      output.push(i);
-      outputDiv.innerHTML = output
-    }
-  }
-  startInput.value = ' ';
-  endInput.value = ' ';
+  outputDiv.innerHTML = 'The higher number is ' + higherNumber
 }
