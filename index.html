@@ -8,18 +8,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <div class="card">
-    <img src="images/man.jpg" alt="John" style="width:100%">
-    <h1>John Doe</h1>
-    <p class="title">CEO & Founder, Example</p>
-    <p>Harvard University</p>
-    <a href="#"><i class="fa fa-dribbble"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-linkedin"></i></a>
-    <a href="#"><i class="fa fa-facebook"></i></a>
-    <p><button>Contact</button></p>
+    <div class="container">
+        <h1>Counter</h1>
+        <div id="display-container">
+            <p id="display-number"></p>
+        </div>
+        <div class="control-painel">
+            <button class="buttom-add" id="buttom-add" onclick="add()">+</button>
+            <button class="buttom-remove" id="buttom-remove" onclick="remove()">-</button>
+            <button class="buttom-reset" id="buttom-reset" onclick="reset()">Reset</button>
+        </div>
     </div>
     <script src="main.js"></script>
 </body>

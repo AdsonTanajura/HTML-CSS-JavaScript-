@@ -1,34 +1,83 @@
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
+body {
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  height: 400px;
+  width: 400px;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
   text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+
 }
 
-.title {
-  color: grey;
-  font-size: 18px;
+p {
+  text-align: center;
+  color: greenyellow;
+  font-size: 40px;
+  margin: 0;
+  font-family: sans-serif;
+  font-weight: bold;
+
+
 }
 
-button {
+.control-painel {
+  display: flex;
+  flex-direction: initial;
+  gap: 8px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.buttom-add {
+  background-color: green;
   border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
+  border-radius: 10%;
+  height: 40px;
+  width: 40px;
   color: white;
-  background-color: #000;
-  text-align: center;
+  font-weight: bold;
   cursor: pointer;
-  width: 100%;
-  font-size: 18px;
 }
 
-a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
+.buttom-remove {
+  background-color: green;
+  border: none;
+  border-radius: 10%;
+  height: 40px;
+  width: 40px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+.buttom-reset {
+  background-color: green;
+  border: none;
+  border-radius: 10%;
+  height: 40px;
+  width: 80px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  
 }
 
-button:hover, a:hover {
-  opacity: 0.7;
+.buttom-remove:hover {
+  background-color: greenyellow;
+}
+
+.buttom-add:hover {
+  background-color: greenyellow;
+}
+.buttom-reset:hover {
+  background-color: greenyellow;
 }
