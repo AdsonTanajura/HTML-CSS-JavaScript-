@@ -4,8 +4,17 @@ h1 {
 }
 
 img {
-  max-width: 80%;
-  height: 100%;
+  max-width: 50%;
+  height: auto;
   display: block;
   margin: 0 auto;
+}
+
+button{
+  background-color: bisque;
+  color: coral;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: block;
+  margin: 15px auto; 
 }
