@@ -1,12 +1,22 @@
-const clockElement = document.getElementById('clock');
+const txtInput = document.querySelector(".inputs input"),
+checkBtn = document.querySelector(".inputs button"),
+infoTxt = document.querySelector(".info-txt");
+let filterInput;
 
-function updateClock() {
-  const date = new Date();
-  const hours = date.getHours().toString().padStart(2, '0');
-  const minutes = date.getMinutes().toString().padStart(2, '0');
-  const seconds = date.getSeconds().toString().padStart(2, '0');
-  clockElement.textContent = `${hours}:${minutes}:${seconds}`;
-}
+checkBtn.addEventListener("click", () => {
+    let reverseInput = filterInput.split("").reverse().join("");
+    infoTxt.style.display = "block";
+    if(filterInput != reverseInput) {
+        return infoTxt.innerHTML = `No, <span>'${txtInput.value}'</span> isn't a palindrome!`;
+    }
+    infoTxt.innerHTML = `Yes, <span>'${txtInput.value}'</span> is a palindrome!`;
+});
 
-updateClock();
-setInterval(updateClock, 1000);
+txtInput.addEventListener("keyup", () => {
+    filterInput = txtInput.value.toLowerCase().replace(/[^A-Z0-9]/ig, "");
+    if(filterInput) {
+        return checkBtn.classList.add("active");
+    }
+    infoTxt.style.display = "none";
+    checkBtn.classList.remove("active");
+});
